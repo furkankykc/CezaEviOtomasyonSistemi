@@ -87,7 +87,7 @@ public class kogusDao {
 	}
 	
 	
-	public ArrayList<Kogus> KogusList() {
+/*	public ArrayList<Kogus> KogusList() {
 		this.kogusList = new ArrayList();
 		Connection con = ConnectionManager.getConnection();
 		try {
@@ -101,5 +101,5 @@ public class kogusDao {
 		}
 		return this.kogusList;
 	}
-	
+	*/
 }

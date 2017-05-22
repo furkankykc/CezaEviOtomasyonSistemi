@@ -26,7 +26,7 @@ public class sucDao {
 		
 		try {
 			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery("select * from suc where id="+id);
+			ResultSet rs = st.executeQuery("select * from suclar where id="+id);
 			rs.next();
 			this.suc = new Suc(rs.getInt("id"), rs.getString("ad"), rs.getString("suc_tanimi"));
 		} catch ( SQLException ex ) {
@@ -40,7 +40,7 @@ public class sucDao {
 		Connection con = ConnectionManager.getConnection();
 		try {
 			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery("select * from suc");
+			ResultSet rs = st.executeQuery("select * from suclar");
 			while ( rs.next() ) {
 				this.sucList.add(new Suc(rs.getInt("id"), rs.getString("ad"), rs.getString("suc_tanimi")));
 				System.out.println("-----------------");
@@ -56,7 +56,7 @@ public class sucDao {
 		Connection con = ConnectionManager.getConnection();
 		try {
 			Statement st = con.createStatement();
-			st.executeUpdate("delete from suc where id="+id);
+			st.executeUpdate("delete from suclar where id="+id);
 		} catch ( SQLException ex ) {
 			System.out.println(ex.getMessage());		
 		}
@@ -68,7 +68,7 @@ public class sucDao {
 		
 		try {
 			Statement st = con.createStatement();
-			st.executeUpdate("update suc set ad='"+a.getAd()+"', suc_tanimi='"+a.getSuc_tanimi()+"' where id="+a.getId());
+			st.executeUpdate("update suclar set ad='"+a.getAd()+"', suc_tanimi='"+a.getSuc_tanimi()+"' where id="+a.getId());
 		} catch ( SQLException ex ) {
 			System.out.println(ex.getMessage());		
 		}
@@ -80,7 +80,7 @@ public class sucDao {
 		
 		try {
 			Statement st = con.createStatement();
-			st.executeUpdate("insert into suc (ad,suc_tanimi) values ('"+a.getAd()+"', '"+a.getSuc_tanimi()+"')");
+			st.executeUpdate("insert into suclar (ad,suc_tanimi) values ('"+a.getAd()+"', '"+a.getSuc_tanimi()+"')");
 		} catch ( SQLException ex ) {
 			System.out.println(ex.getMessage());		
 		}
@@ -92,7 +92,7 @@ public class sucDao {
 		Connection con = ConnectionManager.getConnection();
 		try {
 			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery("select * from suc");
+			ResultSet rs = st.executeQuery("select * from suclar");
 			while ( rs.next() ) {
 				this.sucList.add(new Suc(rs.getString("ad"), rs.getString("suc_tanimi")));
 			}

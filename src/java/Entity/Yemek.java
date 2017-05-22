@@ -25,6 +25,16 @@ public class Yemek {
         this.ad = ad;
         this.kalori = kalori;
     }
+    public Yemek(String ad, int kalori) {
+        this.id = 0;
+        this.ad = ad;
+        this.kalori = kalori;
+    }
+    public Yemek() {
+        this.id = 0;
+        this.ad = null;
+        this.kalori = 0;
+    }
 
     public int getId() {
         return id;

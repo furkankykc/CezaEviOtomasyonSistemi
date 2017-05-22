@@ -19,37 +19,53 @@ public class Suclu {
     private int suc_id;
     private int kogus_id;
     private Date giris_tarih;
-    private Date cıkıs_tarih;
+    private Date cikis_tarih;
     private Suc suc;
     private Kogus kogus;
     
-    public Suclu(int id, String ad, int suc_id, int tc, int kogus_id, String kan_grubu, Date giris_tarih, Date cıkıs_tarih) {
+    public Suclu(int id, String ad, int suc_id, int tc, int kogus_id, String kan_grubu, Date giris_tarih, Date cikis_tarih) {
         this.id = id;
         this.ad = ad;
         this.suc_id = suc_id;
         this.tc = tc;
         this.giris_tarih = giris_tarih;
-        this.cıkıs_tarih = cıkıs_tarih;
+        this.cikis_tarih = cikis_tarih;
         this.kogus_id = kogus_id;
         this.kan_grubu = kan_grubu;
     }   
-    public Suclu(String ad, int suc_id, int tc, int kogus_id, String kan_grubu, Date giris_tarih, Date cıkıs_tarih) {
+    public Suclu(String ad, int suc_id, int tc, int kogus_id, String kan_grubu, Date giris_tarih, Date cikis_tarih) {
         this.id = 0;
         this.ad = ad;
         this.suc_id = suc_id;
         this.tc = tc;
         this.giris_tarih = giris_tarih;
-        this.cıkıs_tarih = cıkıs_tarih;
+        this.cikis_tarih = cikis_tarih;
         this.kogus_id = kogus_id;
         this.kan_grubu = kan_grubu;
     }
+    public Suclu(int id, String ad, int suc_id, int tc, int kogus_id, String kan_grubu) {
+        this.id = id;
+        this.ad = ad;
+        this.suc_id = suc_id;
+        this.tc = tc;
+        this.kogus_id = kogus_id;
+        this.kan_grubu = kan_grubu;
+    }   
+    public Suclu(String ad, int suc_id, int tc, int kogus_id, String kan_grubu) {
+        this.id = 0;
+        this.ad = ad;
+        this.suc_id = suc_id;
+        this.tc = tc;
+        this.kogus_id = kogus_id;
+        this.kan_grubu = kan_grubu;
+    }   
     public Suclu() {
         this.id = 0;
         this.ad = null;
         this.suc_id = 0;
         this.tc = 0;
         this.giris_tarih = null;
-        this.cıkıs_tarih = null;
+        this.cikis_tarih = null;
         this.kogus_id = 0;
         this.kan_grubu = null;
     }
@@ -110,12 +126,12 @@ public class Suclu {
         this.giris_tarih = giris_tarih;
     }
 
-    public Date getCıkıs_tarih() {
-        return cıkıs_tarih;
+    public Date getCikis_tarih() {
+        return cikis_tarih;
     }
 
-    public void setCıkıs_tarih(Date cıkıs_tarih) {
-        this.cıkıs_tarih = cıkıs_tarih;
+    public void setCikis_tarih(Date cikis_tarih) {
+        this.cikis_tarih = cikis_tarih;
     }
 //burayi düzelt
     public int getKogus_id() {
@@ -136,7 +152,7 @@ public class Suclu {
 
     @Override
     public String toString() {
-        return "Suclu{" + "id=" + id + ", ad=" + ad + ", suc_id=" + suc_id + ", tc=" + tc + ", giris_tarih=" + giris_tarih + ", c\u0131k\u0131s_tarih=" + cıkıs_tarih + ", kogus_id=" + kogus_id + ", kan_grubu=" + kan_grubu + '}';
+        return "Suclu{" + "id=" + id + ", ad=" + ad + ", suc_id=" + suc_id + ", tc=" + tc + ", giris_tarih=" + giris_tarih + ", c\u0131k\u0131s_tarih=" + cikis_tarih + ", kogus_id=" + kogus_id + ", kan_grubu=" + kan_grubu + '}';
     }
     
     

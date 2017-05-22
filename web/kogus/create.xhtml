@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+          xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+	</h:head>
+    <h:body>
+
+		<ui:composition template="/template/layout.xhtml">
+			<ui:define name="content">
+
+
+				<div class="container">
+					<p>
+						<label for="">Kogus katı</label>
+                                                <h:inputText value="#{kogus.a.kat}" />
+					</p>
+					<label for="">Kogus Numarası</label>
+                                             <h:inputText value="#{kogus.a.numara}" />
+                                            
+                                    
+                                        <p>
+						<label for="">Kogus Bina Numarası</label>
+                                                <h:inputText value="#{kogus.a.binaNo}" />
+					</p>
+                                     
+					<p>
+                                            <h:commandButton value="Oluştur" action="#{kogus.createKogus()}"/>
+                                                             </p>
+				</div>
+			</ui:define>
+		</ui:composition>
+    </h:body>
+</html>
+

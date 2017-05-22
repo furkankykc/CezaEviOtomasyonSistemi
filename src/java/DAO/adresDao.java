@@ -25,6 +25,7 @@ public class adresDao {
 		Connection con = ConnectionManager.getConnection();
 		
 		try {
+                        
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery("select * from adres where id="+id);
 			rs.next();
@@ -35,7 +36,7 @@ public class adresDao {
 		return this.adres;
 	}
 	
-	public ArrayList<Adres> list() {
+	public ArrayList<Adres> list()  {
 		this.adresList = new ArrayList();
 		Connection con = ConnectionManager.getConnection();
 		try {

@@ -30,6 +30,10 @@ public class Adres {
         this.binaNo = binaNo;
         this.mahalle = mahalle;
     }
+    public Adres() {
+        this.binaNo = 0;
+        this.mahalle = null;
+    }
 
     public int getId() {
         return id;

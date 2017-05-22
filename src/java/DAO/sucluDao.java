@@ -28,7 +28,7 @@ public class sucluDao {
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery("select * from suclu where id="+id);
 			rs.next();
-			this.suclu = new Suclu(rs.getInt("id"),rs.getString("ad"), rs.getInt("suc_id"), rs.getInt("tc"), rs.getInt("kogus_id"), rs.getString("kan_grubu"),rs.getDate("giris_tarih"),rs.getDate("cıkıs_tarih"));
+			this.suclu = new Suclu(rs.getInt("id"),rs.getString("ad"), rs.getInt("suc_id"), rs.getInt("tc"), rs.getInt("kogus_id"), rs.getString("kan_grubu"),rs.getDate("giris_tarih"),rs.getDate("cikis_tarih"));
 		} catch ( SQLException ex ) {
 			System.out.println(ex.getMessage());		
 		}
@@ -42,7 +42,7 @@ public class sucluDao {
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery("select * from suclu");
 			while ( rs.next() ) {
-				this.sucluList.add(new Suclu(rs.getInt("id"),rs.getString("ad"), rs.getInt("suc_id"), rs.getInt("tc"), rs.getInt("kogus_id"), rs.getString("kan_grubu"),rs.getDate("giris_tarih"),rs.getDate("cıkıs_tarih")));
+				this.sucluList.add(new Suclu(rs.getInt("id"),rs.getString("ad"), rs.getInt("suc_id"), rs.getInt("tc"), rs.getInt("kogus_id"), rs.getString("kan_grubu"),rs.getDate("giris_tarih"),rs.getDate("cikis_tarih")));
 				System.out.println("-----------------");
 			}
 		} catch ( SQLException ex ) {
@@ -68,7 +68,7 @@ public class sucluDao {
 		
 		try {
 			Statement st = con.createStatement();
-			st.executeUpdate("update suclu set ad='"+a.getAd()+"', suc_id='"+a.getSuc_id()+"', tc='"+a.getTc()+"', kogus_id='"+a.getKogus_id()+"', kan_grubu='"+a.getKan_grubu()+"', giris_tarih='"+a.getGiris_tarih()+"', cıkıs_tarih='"+a.getCıkıs_tarih()+"' where id="+a.getId());
+			st.executeUpdate("update suclu set ad='"+a.getAd()+"', suc_id='"+a.getSuc_id()+"', tc='"+a.getTc()+"', kogus_id='"+a.getKogus_id()+"', kan_grubu='"+a.getKan_grubu()+"', giris_tarih='"+a.getGiris_tarih()+"', cikis_tarih='"+a.getCikis_tarih()+"' where id="+a.getId());
 		} catch ( SQLException ex ) {
 			System.out.println(ex.getMessage());		
 		}
@@ -80,7 +80,7 @@ public class sucluDao {
 		
 		try {
 			Statement st = con.createStatement();
-			st.executeUpdate("insert into suclu (ad, suc_id, tc, kogus_id, kan_grubu, giris_tarih, cıkıs_tarih) values ('"+a.getAd()+"', '"+a.getSuc_id()+"', '"+a.getTc()+"', '"+a.getKogus_id()+"', '"+a.getKan_grubu()+"', '"+a.getGiris_tarih()+"', '"+a.getCıkıs_tarih()+"')");
+			st.executeUpdate("insert into suclu (ad, suc_id, tc, kogus_id, kan_grubu) values ('"+a.getAd()+"', '"+a.getSuc_id()+"', '"+a.getTc()+"', '"+a.getKogus_id()+"', '"+a.getKan_grubu()+"')");
 		} catch ( SQLException ex ) {
 			System.out.println(ex.getMessage());		
 		}
@@ -94,7 +94,7 @@ public class sucluDao {
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery("select * from suclu");
 			while ( rs.next() ) {
-				this.sucluList.add(new Suclu(rs.getInt("id"),rs.getString("ad"), rs.getInt("suc_id"), rs.getInt("tc"), rs.getInt("kogus_id"), rs.getString("kan_grubu"),rs.getDate("giris_tarih"),rs.getDate("cıkıs_tarih")));
+				this.sucluList.add(new Suclu(rs.getInt("id"),rs.getString("ad"), rs.getInt("suc_id"), rs.getInt("tc"), rs.getInt("kogus_id"), rs.getString("kan_grubu"),rs.getDate("giris_tarih"),rs.getDate("cikis_tarih")));
 			}
 		} catch ( SQLException ex ) {
 			System.out.println(ex.getMessage());		

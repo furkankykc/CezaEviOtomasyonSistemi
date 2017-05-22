@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+
+	  xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <body>
+
+		<ui:composition>
+<h:form>
+            
+    <p>Welcome #{login.user.userName}
+                       </p>
+	</h:form>
+                 
+        <h:commandLink action="#{login.logout()}" value="Logout"/>   
+			<ul>
+				<li>
+					<h:commandButton action="/adres/list.xhtml" value="Adres"/>
+				</li>
+                            
+				<li>
+					<h:commandButton action="/gardiyan/list.xhtml" value="Gardiyan"/>
+				</li>
+                            
+				<li>
+					<h:commandButton action="/suclu/list.xhtml" value="Suclu"/>
+				</li>
+                            
+				<li>
+					<h:commandButton action="/kogus/list.xhtml" value="Kogus"/>
+				</li>
+                            
+				<li>
+					<h:commandButton action="/rutbe/list.xhtml" value="Rutbe"/>
+				</li>
+                            
+				<li>
+					<h:commandButton action="/suc/list.xhtml" value="Suc"/>
+				</li>
+                            
+				<li>
+					<h:commandButton action="/yemek/list.xhtml" value="Yemek"/>
+				</li>
+			</ul>
+
+		</ui:composition>
+    </body>
+</html>
