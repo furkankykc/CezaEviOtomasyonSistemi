@@ -14,7 +14,6 @@ and open the template in the editor.
     </head>
     <body>
         <div>
-            <p>username : furkankykc pass : 123456</p>
             <a href="admin.xhtml">anasayfa</a>
             
 
@@ -22,6 +21,7 @@ and open the template in the editor.
                 Username: <h:inputText  value="#{login.user.userName}" />
                 Password: <h:inputSecret value="#{login.user.password}" />
                 <h:commandButton value="Login" action="#{login.validateUsernamePassword()}" />
+                <h:commandButton value="Register" action="#{login.register()}" />
 </h:form>
 <!-- needs to be enclosed by <h:form> -->
 <h:form>

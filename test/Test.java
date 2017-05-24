@@ -31,9 +31,8 @@ public class Test {
           User u = login.getUser();
           u.setUserName("furkan");
           u.setPassword("123456");
-          System.out.println(login.getUser().getUserName());
-          System.out.println(kogus.getA().getBinaNo());
-
+          
+    
 
     
     

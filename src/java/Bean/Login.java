@@ -16,6 +16,8 @@ import DAO.LoginDAO;
 import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
 import Entity.User;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ManagedBean;
@@ -76,7 +78,7 @@ public class Login implements Serializable {
 		if (valid) {
 			HttpSession session = SessionUtils.getSession();
 			session.setAttribute("username", user.getUserName());
-			return "admin";
+			return "index";
 		} else {
 			FacesContext.getCurrentInstance().addMessage(
 					null,
@@ -86,7 +88,15 @@ public class Login implements Serializable {
 			return "login";
 		}
 	}
-
+        public String register(){
+            LoginDAO ld = new LoginDAO();
+            try {
+                ld.create(getUser());
+            } catch (NoSuchAlgorithmException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return "login";
+        }
 	//logout event, invalidate session
 	public String logout() {
 		HttpSession session = SessionUtils.getSession();

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:p="http://primefaces.org/ui">
+
+ 
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>JSF File Upload Example</title>
+</h:head>
+<h:body>
+        <h3>dosya upload yapım aşamasında</h3>
+<h:form id="fileUpload" prependId="false"     enctype="multipart/form-data">
+ 
+        <h:outputLabel for="txtIdName" value="Name:" />
+        <h:inputText id="txtIdName" value="#{jsfFileUploadBean.name}"/>
+        <h:outputLabel for="fu" value="Name:" />
+        <h:inputFile id="fu" value="#{jsfFileUploadBean.file}">
+            <f:validator validatorId="fileUploadValidator"/>
+        </h:inputFile>
+ 
+        <p> <h:messages id="messages" /></p>
+ 
+        <h:commandButton value="Upload File" action="#{jsfFileUploadBean.processFileUpload}"></h:commandButton>
+</h:form>                                 
+ 
+        <img src="#{jsfFileUploadBean.projectPath}/images/#{jsfFileUploadBean.name}.jpg"/>
+</h:body>
+</html>

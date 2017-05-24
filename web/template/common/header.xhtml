@@ -5,16 +5,28 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
 
 	  xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+    
     <body>
+        
+        
 
 		<ui:composition>
+                    
 <h:form>
             
     <p>Welcome #{login.user.userName}
                        </p>
 	</h:form>
+                    
                  
-        <h:commandLink action="#{login.logout()}" value="Logout"/>   
+        <h:commandLink action="#{login.logout()}" value="Logout"/>  
+         <br></br>
+        
+        <h:commandLink action="/upload" value="Upload "/>  
+        <br></br>
+        <h:commandLink action="/index" value="anasayfa"/>   
+        
 			<ul>
 				<li>
 					<h:commandButton action="/adres/list.xhtml" value="Adres"/>

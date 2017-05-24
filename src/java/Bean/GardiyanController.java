@@ -11,6 +11,8 @@ import DAO.gardiyanDao;
 import Entity.Rutbe;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.servlet.http.Part;
+
 /**
  *
  * @author furkankykc
@@ -72,6 +74,10 @@ public class GardiyanController {
 	
 	public String createGardiyan() {
 		this.getaDAO().create(this.a);
+                FileUploadBean fl = new FileUploadBean();
+                fl.setFile(file);
+                fl.setName(name);
+                fl.processFileUpload();
 		this.aList = this.getaDAO().list();
 		return "list";
 	}
@@ -101,6 +107,25 @@ public class GardiyanController {
         public void refreshList(){
             this.aList=getaDAO().list();
         }
+
+        private String name;
+    private Part file;
+    
+    public Part getFile() {
+        return file;
+    }
+ 
+    public void setFile(Part file) {
+        this.file = file;
+    }
+ 
+    public String getName() {
+        return name;
+    }
+ 
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }
 

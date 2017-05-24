@@ -5,18 +5,151 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
+
+
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <head>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+         <meta charset="utf-8"></meta>
+         <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+            <link href="resources/css/pinar.css" rel="stylesheet"></link>
+            <link href="css/bootstrap.min.css" rel="stylesheet"></link>
         <title>TODO supply a title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-         <a href="admin.xhtml">anasayfa</a>
+        
+		<h:outputStylesheet name="bootstrap.css" library="css" />
+		<h:outputStylesheet name="custom.css" library="css" />
+		<h:outputScript name="bootstrap.min.js" library="js" />
+                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+         <script src="js/bootstrap.min.js"></script>
+    </h:head>
+    <h:body>
+        
+         
         <h:form>
+          
             
-            <p>Welcome #{login.user.userName}</p>
-		<h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
-	</h:form>
-    </body>
+       <header>
+         <h1>CEZAEVİ OTOMASYONU</h1>
+       </header>
+     <ul>
+       <li><a href="#home">Anasayfa</a></li>
+       <li><a href="#news">Hakkımızda</a></li>
+       <li><a href="#news">İletişim</a></li>
+       <li><a href="admin.xhtml">Admin Page</a></li>
+      <li class="dropdown">
+           <a href="javascript:void(0)" class="dropbtn">Kategori</a>
+             <div class="dropdown-content">
+                <a href="#">Gardiyanlar</a>
+                <a href="#" action="">Suçlular</a>
+                <a href="#">Koğuşlar</a>
+                <a href="#">Revir</a>
+                <a href="#">Yemek Listesi</a>
+             </div>
+      </li>
+       <li> <a>Welcome #{login.user.userName}</a></li>
+       <li><h:commandLink  action="#{login.logout}" value="Logout"></h:commandLink></li>
+      </ul>
+<!--         <table  width="1351" height= "500" bgcolor="lightgray">
+           <tr>
+             <td align="right">
+              
+            </td>
+           </tr>
+        </table>-->
+          
+                
+                <div class="container">
+					<hr />
+                                        
+                                        <label>GARDİYANLAR</label>
+                                        <h:dataTable value="#{gardiyan.aList}" var="a"
+								 styleClass="table table-stripped"
+								 >
+                                                                 <h:column>
+							<f:facet name="header">Gardiyan ADI</f:facet>
+								#{a.ad} 
+						</h:column>
+					
+                                                <h:column>
+							<f:facet name="header">Gardiyan TC</f:facet>
+								#{a.tc}
+						</h:column>
+
+					</h:dataTable>
+                                        
+                                        <label>KOĞUŞLAR</label>
+                                        <h:dataTable value="#{kogus.aList}" var="a"
+								 styleClass="table table-stripped"
+								 >
+
+						<h:column>
+							<!-- column header -->
+							<f:facet name="header">Kogus ID</f:facet>
+							<!-- row record -->
+							#{a.id}
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">Kogus Katı</f:facet>
+								#{a.kat} 
+						</h:column>
+                                                <h:column>
+							<f:facet name="header">Kogus Numarası</f:facet>
+								#{a.numara}
+						</h:column>
+                                                <h:column>
+							<f:facet name="header">Kogus Bina Numarası</f:facet>
+								#{a.binaNo}
+						</h:column>
+
+						
+
+					</h:dataTable>
+                                        
+                                        <label>SUÇLULAR</label>
+                                        <h:dataTable value="#{suclu.aList}" var="a"
+								 styleClass="table table-stripped"
+								 >
+
+						
+
+						<h:column>
+							<f:facet name="header">ad</f:facet>
+								#{a.ad} 
+						</h:column>
+                                                <h:column>
+							<f:facet name="header">tc</f:facet>
+								#{a.tc}
+						</h:column>
+
+						
+					</h:dataTable>
+                                        <h:dataTable value="#{yemek.aList}" var="a"
+								 styleClass="table table-stripped"
+								 >
+
+						<h:column>
+							<f:facet name="header">Yemek Adı</f:facet>
+								#{a.ad} 
+						</h:column>
+                                                <h:column>
+							<f:facet name="header">Kalori</f:facet>
+								#{a.kalori}
+						</h:column>
+
+						
+
+					</h:dataTable>
+				</div>
+                
+                
+	</h:form> <div id="footer">
+            tasarim berbat . com
+            </div>
+         
+    </h:body>
 </html>
