@@ -30,11 +30,6 @@ public class GardiyanController {
 	private ArrayList<Gardiyan> aList = null;
 	private gardiyanDao aDAO = null;
         
-        
-        public ArrayList<Rutbe> getRutbe(){
-            RutbeController rc = new RutbeController();
-            return rc.getA();
-        }
         public gardiyanDao getaDAO() {
             if ( this.aDAO == null )
                     this.aDAO = new gardiyanDao();
@@ -100,7 +95,13 @@ public class GardiyanController {
 		}
 		return this.aList;
 	}
-        
+          public ArrayList<Gardiyan> getaList4Rutbe_id(int rutbe_id) {
+				if ( this.aList == null ) {
+			this.aList = new ArrayList();
+			this.aList = getaDAO().list4Rutbe_id(rutbe_id);
+		}
+		return this.aList;
+	}
 	public void setaList(ArrayList<Gardiyan> aList) {
 		this.aList = aList;
 	}

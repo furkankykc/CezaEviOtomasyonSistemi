@@ -101,5 +101,33 @@ public class sucluDao {
 		}
 		return this.sucluList;
 	}
+        public ArrayList<Suclu> SucluList4Suc_id(int suc_id) {
+		this.sucluList = new ArrayList();
+		Connection con = ConnectionManager.getConnection();
+		try {
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery("select * from suclu where suc_id = "+suc_id);
+			while ( rs.next() ) {
+				this.sucluList.add(new Suclu(rs.getInt("id"),rs.getString("ad"), rs.getInt("suc_id"), rs.getInt("tc"), rs.getInt("kogus_id"), rs.getString("kan_grubu"),rs.getDate("giris_tarih"),rs.getDate("cikis_tarih")));
+			}
+		} catch ( SQLException ex ) {
+			System.out.println(ex.getMessage());		
+		}
+		return this.sucluList;
+	}
+                public ArrayList<Suclu> SucluList4Kogus_id(int kogus_id) {
+		this.sucluList = new ArrayList();
+		Connection con = ConnectionManager.getConnection();
+		try {
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery("select * from suclu where kogus_id = "+kogus_id);
+			while ( rs.next() ) {
+				this.sucluList.add(new Suclu(rs.getInt("id"),rs.getString("ad"), rs.getInt("suc_id"), rs.getInt("tc"), rs.getInt("kogus_id"), rs.getString("kan_grubu"),rs.getDate("giris_tarih"),rs.getDate("cikis_tarih")));
+			}
+		} catch ( SQLException ex ) {
+			System.out.println(ex.getMessage());		
+		}
+		return this.sucluList;
+	}
 	
 }

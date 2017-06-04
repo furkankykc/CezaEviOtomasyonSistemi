@@ -25,12 +25,12 @@ public class Test {
 
           LoginDAO s =new LoginDAO();
           Login login = new Login();
-          KogusController kogus =new KogusController();
-          Kogus k = kogus.getA();
-          k.setBinaNo(23);
-          User u = login.getUser();
-          u.setUserName("furkan");
-          u.setPassword("123456");
+          GardiyanController gc = new GardiyanController();
+          RutbeController rc = new RutbeController();
+          Gardiyan g = gc.getA();
+          g.setRutbe(1);
+          Rutbe r = rc.getaDAO().get(g.getRutbe_id());
+          System.out.println("Test.main()"+r);
           
     
 

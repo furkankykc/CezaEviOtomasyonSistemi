@@ -20,15 +20,11 @@
 
 			<div class="container">
 				<p>
-					<label for="first_name">Bina Numarası</label>
-                                        <h:inputText value="#{adres.a.binaNo}" />
+					<label for="first_name">Rütbe adı</label>
+                                        <h:inputText value="#{rutbe.a.ad}" />
 				</p>
 				<p>
-					<label for="last_name">Mahalle</label>
-                                        <h:inputText value="#{adres.a.mahalle}" />
-				</p>
-				<p>
-                                    <h:commandButton value="CREATE" action="#{adres.updateAdres()}" />
+                                    <h:commandButton value="CREATE" action="#{rutbe.updateRutbe()}" />
 				</p>
 			</div>
 			</ui:define>

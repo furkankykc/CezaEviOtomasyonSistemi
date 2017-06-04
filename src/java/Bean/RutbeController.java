@@ -59,10 +59,9 @@ public class RutbeController {
 		refreshList();return "list";
 	}
 	
-	public Rutbe getA(int id) {
+	public Rutbe getA() {
 		if ( this.a == null ){
 			this.a = new Rutbe();
-                        this.a = getaDAO().get(id);
                         
                 }
 		return a;
@@ -72,7 +71,7 @@ public class RutbeController {
 		this.a = a;
 	}
 
-	public ArrayList<Rutbe> getA() {
+	public ArrayList<Rutbe> getaList() {
 		if ( this.aList == null ) {
 			this.aList = new ArrayList();
 			this.aList = getaDAO().list();

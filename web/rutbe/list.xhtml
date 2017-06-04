@@ -20,9 +20,9 @@
 
 
 				<div class="container">
-					<h:commandButton action="#{adres.createForm()}" value="YENİ ADRES"></h:commandButton>
+					<h:commandButton action="#{rutbe.createForm()}" value="YENİ RÜTBE"></h:commandButton>
 					<hr />
-                                        <h:dataTable value="#{adres.aList}" var="a"
+                                        <h:dataTable value="#{rutbe.aList}" var="a"
 								 styleClass="table table-stripped"
 								 >
 
@@ -35,18 +35,13 @@
 
 						<h:column>
 							<f:facet name="header">Bina Numarası</f:facet>
-								#{a.binaNo} 
+								#{a.ad} 
 						</h:column>
-                                                <h:column>
-							<f:facet name="header">Mahalle</f:facet>
-								#{a.mahalle}
-						</h:column>
-
 						<h:column>
 							<f:facet name="header">ADMINISTRATION</f:facet>
-							<h:commandButton action="#{adres.detail(a)}" value="Detaylar"></h:commandButton>
-							<h:commandButton action="#{adres.updateForm(a)}" value="Düzenle"></h:commandButton>
-							<h:commandButton action="#{adres.delete(a.id)}" value="Sil"></h:commandButton>
+							<h:commandButton action="#{rutbe.detail(a)}" value="Detaylar"></h:commandButton>
+							<h:commandButton action="#{rutbe.updateForm(a)}" value="Düzenle"></h:commandButton>
+							<h:commandButton action="#{rutbe.delete(a.id)}" value="Sil"></h:commandButton>
 						</h:column>
 
 					</h:dataTable>

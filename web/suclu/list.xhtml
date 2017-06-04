@@ -44,7 +44,14 @@
 							<f:facet name="header">tc</f:facet>
 								#{a.tc}
 						</h:column>
-
+                                                <h:column>
+							<f:facet name="header">Koguş</f:facet>
+								#{kogus.getaDAO().get(a.kogus_id).kat}
+						</h:column>
+                                                <h:column>
+							<f:facet name="header">Kan gurubu</f:facet>
+								#{a.kan_grubu}
+						</h:column>
 						<h:column>
 							<f:facet name="header">ADMINISTRATION</f:facet>
 							<h:commandButton action="#{suclu.detail(a)}" value="Detaylar"></h:commandButton>

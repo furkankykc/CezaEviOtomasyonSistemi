@@ -17,12 +17,20 @@
 		<h:form>
 			<div class="container">
 				<p>
-					<label for="">ID:</label>
-					#{rutbe.a.id}
+					<label for="">ID: </label>
+					#{gardiyan.a.id}
 				</p>
 				<p>
-					<label for="">Rütbe Adı</label>
-					#{rutbe.a.ad}
+					<label for="">AD: </label>
+					#{gardiyan.a.ad}
+				</p>
+				<p>
+					<label for="">Rutbe </label>
+					#{rutbe.getaDAO().get(a.getRutbe_id()).ad}
+				</p>
+                                <p>
+					<label for="">Tc </label>
+					#{gardiyan.a.tc}
 				</p>
 			</div>
 		</h:form>

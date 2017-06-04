@@ -29,7 +29,7 @@
 					<p>
 						<label for="Rutbe">Rutbe</label>
                                                 <h:selectOneMenu value="#{gardiyan.a.rutbe_id}" >
-                                                    <c:forEach items="#{gardiyan.rutbe}" var="c">
+                                                    <c:forEach items="#{rutbe.aList}" var="c">
                                                         <f:selectItem itemValue="#{c.id}" itemLabel="#{c.ad}"></f:selectItem>
                                                     </c:forEach>
                                                 </h:selectOneMenu>

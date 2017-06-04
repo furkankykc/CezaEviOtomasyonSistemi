@@ -44,6 +44,10 @@
 							<f:facet name="header">Gardiyan TC</f:facet>
 								#{a.tc}
 						</h:column>
+                                                <h:column>
+							<f:facet name="header">Gardiyan Rutbe</f:facet>
+								#{rutbe.getaDAO().get(a.getRutbe_id()).ad}
+						</h:column>
 
 						<h:column>
 							<f:facet name="header">ADMINISTRATION</f:facet>

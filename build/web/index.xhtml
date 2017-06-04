@@ -78,8 +78,12 @@ and open the template in the editor.
 							<f:facet name="header">Gardiyan TC</f:facet>
 								#{a.tc}
 						</h:column>
-
-					</h:dataTable>
+                                            
+                                                 <h:column>
+							<f:facet name="header">Gardiyan Rutbe</f:facet>
+								#{rutbe.getaDAO().get(a.getRutbe_id()).ad}
+						</h:column>
+                    			</h:dataTable>
                                         
                                         <label>KOĞUŞLAR</label>
                                         <h:dataTable value="#{kogus.aList}" var="a"

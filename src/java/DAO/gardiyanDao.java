@@ -54,6 +54,21 @@ public class gardiyanDao {
 		}
 		return this.gardiyanList;
 	}
+        public ArrayList<Gardiyan> list4Rutbe_id(int rutbe_id) {
+		this.gardiyanList = new ArrayList();
+		Connection con = ConnectionManager.getConnection();
+		try {
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery("select * from gardiyan where rutbe_id = "+rutbe_id);
+			while ( rs.next() ) {
+				this.gardiyanList.add(new Gardiyan(rs.getInt("id"),rs.getString("ad"),rs.getInt("tc"),rs.getInt("rutbe_id")));
+				
+			}
+		} catch ( SQLException ex ) {
+			System.out.println(ex.getMessage());		
+		}
+		return this.gardiyanList;
+	}
 	
 	
 	public void delete(int id) {

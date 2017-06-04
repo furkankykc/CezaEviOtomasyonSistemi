@@ -50,6 +50,21 @@ public class revir_kaydiDao {
 		}
 		return this.revir_kaydiList;
 	}
+        public ArrayList<Revir_kaydi> list4Suclu_id(int suclu_id) {
+		this.revir_kaydiList = new ArrayList();
+		Connection con = ConnectionManager.getConnection();
+		try {
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery("select * from revir_kaydi where suclu_id = "+suclu_id);
+			while ( rs.next() ) {
+				this.revir_kaydiList.add(new Revir_kaydi(rs.getInt("id"), rs.getInt("suclu_id"), rs.getString("doktor_adi"), rs.getString("sikayet")));
+				System.out.println("-----------------");
+			}
+		} catch ( SQLException ex ) {
+			System.out.println(ex.getMessage());		
+		}
+		return this.revir_kaydiList;
+	}
 	
 	
 	public void delete(int id) {
@@ -87,19 +102,5 @@ public class revir_kaydiDao {
 	}
 	
 	
-	public ArrayList<Revir_kaydi> Revir_kaydiList() {
-		this.revir_kaydiList = new ArrayList();
-		Connection con = ConnectionManager.getConnection();
-		try {
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery("select * from revir_kaydi");
-			while ( rs.next() ) {
-				this.revir_kaydiList.add(new Revir_kaydi(rs.getInt("suclu_id"), rs.getString("doktor_adi"), rs.getString("sikayet")));
-			}
-		} catch ( SQLException ex ) {
-			System.out.println(ex.getMessage());		
-		}
-		return this.revir_kaydiList;
-	}
 	
 }

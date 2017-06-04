@@ -92,6 +92,20 @@ public class SucluController {
 		}
 		return this.aList;
 	}
+        public ArrayList<Suclu> getaList4Suc_id(int suc_id) {
+		if ( this.aList == null ) {
+			this.aList = new ArrayList();
+			this.aList = getaDAO().SucluList4Suc_id(suc_id);
+		}
+		return this.aList;
+	}
+        public ArrayList<Suclu> getaList4Kogus_id(int kogus_id) {
+		if ( this.aList == null ) {
+			this.aList = new ArrayList();
+			this.aList = getaDAO().SucluList4Kogus_id(kogus_id);
+		}
+		return this.aList;
+	}
 
 	public void setaList(ArrayList<Suclu> aList) {
 		this.aList = aList;
